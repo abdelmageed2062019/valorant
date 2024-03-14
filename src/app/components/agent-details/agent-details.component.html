@@ -1,0 +1,42 @@
+<app-loading-screen *ngIf="isLoading"></app-loading-screen>
+
+<div class="dark:bg-gray-800 py-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-col -mx-4">
+      <div class="md:flex-1 px-4">
+        <div
+          class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4 relative"
+        >
+          <img
+            class="w-full h-full object-contain"
+            [src]="agentDetails?.background"
+            alt="Product Image"
+          />
+          <img
+            class="w-full h-full object-contain absolute top-0 right-0"
+            [src]="agentDetails?.fullPortraitV2"
+            alt="Product Image"
+          />
+        </div>
+      </div>
+      <div class="md:flex-1 px-4">
+        <h2 class="text-2xl font-bold text-black dark:text-white mb-2">
+          {{ agentDetails?.displayName }}:
+        </h2>
+        <p class="text-black dark:text-gray-300 text-sm mb-4">
+          {{ agentDetails?.description }}
+        </p>
+        <div class="flex mb-4 bg-black p-4 items-center justify-center gap-2">
+          <div class="mr-4" *ngFor="let ab of agentDetails?.abilities">
+            <span class="font-bold text-white dark:text-gray-300"
+              >{{ ab.displayName }}: <strong>{{ ab.slot }}</strong></span
+            >
+            <span class="font-bold text-white">
+              <img [src]="ab.displayIcon" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

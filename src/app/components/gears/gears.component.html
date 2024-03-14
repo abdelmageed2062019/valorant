@@ -1,0 +1,26 @@
+<app-loading-screen *ngIf="isLoading"></app-loading-screen>
+
+<div class="flex justify-center m-5">
+  <div class="flex flex-col gap-4">
+    <div
+      class="flex rounded-lg shadow-md bg-black overflow-hidden"
+      *ngFor="let gear of gears"
+    >
+      <img
+        class="w-48 h-48 object-cover p-4"
+        [src]="gear.shopData.newImage"
+        alt="Product Image 1"
+      />
+      <div class="flex flex-col p-4 justify-between">
+        <div>
+          <h3 class="text-lg font-medium text-white">{{ gear.displayName }}</h3>
+          <p class="text-white">{{ gear.description }}</p>
+        </div>
+        <ul class="list-disc space-y-2 text-white">
+          <li>Cost: {{ gear.shopData.cost }}</li>
+          <li>Category: {{ gear.shopData.category }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

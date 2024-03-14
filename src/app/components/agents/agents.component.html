@@ -1,0 +1,83 @@
+<app-loading-screen *ngIf="isLoading"></app-loading-screen>
+<div
+  class="text-off-white flex justify-around flex-row"
+  [style.height.2xl]="'70%'"
+  [style.height]="'80%'"
+  style="width: 100%"
+>
+  <!-- Your existing content -->
+
+  <div>
+    <!-- Duelist Agents -->
+    <div class="w-275px flex flex-col items-center">
+      <h2
+        class="text-valorant-white font-Playfair italic lowercase"
+        style="font-size: 64px"
+      >
+        Duelists
+      </h2>
+      <div
+        *ngFor="let agent of playableAgents"
+        class="text-valorant-red cursor-pointer"
+        [class.hover:border-b-2.hover:border-valorant-white]=""
+        [routerLink]="['/agentDetails', agent.uuid]"
+      >
+        {{ agent.displayName }}
+      </div>
+    </div>
+
+    <!-- Controller Agents -->
+    <div class="w-275px flex flex-col items-center">
+      <h2
+        class="text-valorant-white font-Playfair italic lowercase"
+        style="font-size: 64px"
+      >
+        Controllers
+      </h2>
+      <div
+        *ngFor="let agent of playableAgents"
+        class="text-valorant-red cursor-pointer"
+        [class.hover:border-b-2.hover:border-valorant-white]=""
+        [routerLink]="['/agentDetails', agent.uuid]"
+      >
+        {{ agent.displayName }}
+      </div>
+    </div>
+
+    <!-- Initiator Agents -->
+    <div class="w-275px flex flex-col items-center">
+      <h2
+        class="text-valorant-white font-Playfair italic lowercase"
+        style="font-size: 64px"
+      >
+        Initiators
+      </h2>
+      <div
+        *ngFor="let agent of playableAgents"
+        class="text-valorant-red cursor-pointer"
+        [class.hover:border-b-2.hover:border-valorant-white]=""
+        [routerLink]="['/agentDetails', agent.uuid]"
+      >
+        {{ agent.displayName }}
+      </div>
+    </div>
+
+    <!-- Sentinel Agents -->
+    <div class="w-275px flex flex-col items-center">
+      <h2
+        class="text-valorant-white font-Playfair italic lowercase"
+        style="font-size: 64px"
+      >
+        Sentinels
+      </h2>
+      <div
+        *ngFor="let agent of playableAgents"
+        class="text-valorant-red cursor-pointer"
+        [class.hover:border-b-2.hover:border-valorant-white]=""
+        [routerLink]="['/agentDetails', agent.uuid]"
+      >
+        {{ agent.displayName }}
+      </div>
+    </div>
+  </div>
+</div>
